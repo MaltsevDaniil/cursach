@@ -134,6 +134,10 @@ class SwarmSimulator:
         if goal_check.events:
             raise ValueError(f"INVALID_SCENE: overlapping/unreachable goals {goal_check.events[0]}")
         world = WorldState(ids, p, vel, 0.0)
+        # Reset stateful controllers only after scene validation.
+        reset_controller = getattr(self.controller, "reset", None)
+        if callable(reset_controller):
+            reset_controller()
         # Commit reset only after ALL checks passed.
         self._world = world
         self._goals = g.copy()
