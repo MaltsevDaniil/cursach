@@ -31,6 +31,20 @@ def motion_summary(positions, times, window=5.):
                 displacement_to_path=np.divide(displacement,path,out=np.zeros_like(path),where=path>0).tolist())
 
 
+def spacing_case(base, cfg, spacing):
+    base_slots = np.array([slot_position(base.layout,base.plan.at(0),i) for i in base.layout.robot_ids])
+    jitter = base.initial-base_slots
+    layout = FormationLayout(base.layout.robot_ids,"line",spacing)
+    initial = np.array([slot_position(layout,base.plan.at(0),i) for i in layout.robot_ids])+jitter
+    goals = np.array([slot_position(layout,base.plan.at(base.plan.arrival_time),i) for i in layout.robot_ids])
+    from .swarm import SwarmSimulator
+    SwarmSimulator(cfg).reset(initial,goals)
+    scene = dict(base.scene_dict,layout=asdict(layout),positions=initial.tolist(),goals=goals.tolist(),
+             diagnostic="spacing sensitivity, not canonical E2",
+             audit=None)
+    return replace(base,layout=layout,initial=initial,goals=goals,scene_dict=scene,scene_hash=sha(scene))
+
+
 def main(argv=None):
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--out",type=Path,required=True)
@@ -44,18 +58,8 @@ def main(argv=None):
     cfg = SwarmConfig(max_speed=.8)
     base = make_case("free",5,0,cfg)
     cases = []
-    base_slots = np.array([slot_position(base.layout,base.plan.at(0),i) for i in base.layout.robot_ids])
-    jitter = base.initial-base_slots
     for spacing in args.spacings:
-        layout = FormationLayout(base.layout.robot_ids,"line",spacing)
-        initial = np.array([slot_position(layout,base.plan.at(0),i) for i in layout.robot_ids])+jitter
-        goals = np.array([slot_position(layout,base.plan.at(base.plan.arrival_time),i) for i in layout.robot_ids])
-        from .swarm import SwarmSimulator
-        SwarmSimulator(cfg).reset(initial,goals)
-        scene = dict(base.scene_dict,layout=asdict(layout),positions=initial.tolist(),goals=goals.tolist(),
-                     diagnostic="spacing sensitivity, not canonical E2",
-                     audit=None)
-        cases.append(replace(base,layout=layout,initial=initial,goals=goals,scene_dict=scene,scene_hash=sha(scene)))
+        cases.append(spacing_case(base,cfg,spacing))
     args.out.mkdir(parents=True)
     code = code_fingerprint()
     manifest = dict(kind="free_spacing_diagnostic",run_status="IN_PROGRESS",code=code,
