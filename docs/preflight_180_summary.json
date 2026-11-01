@@ -1,0 +1,91 @@
+{
+  "manifest": {
+    "version": "SCENARIO-E2-RECONSTRUCTED-1.0.0",
+    "code": {
+      "files": {
+        "__init__.py": "fa12649c55067c3bf0c4f7eff62aff8863118967bf1bdc7ff79ee292044d0165",
+        "adaptive_d.py": "5dfbfb7f5f7e59a04a06d9ec3bf88991295064e78487308681aa921acedeb32d",
+        "boids.py": "c260076beb424a27568adc0c41c636616c2fee50992051ba89f5577aaad6c648",
+        "checkpoints.py": "844342b3c5f6b9ab0e652ec2eea5fc5ee59402ed7061276d69ef0f66cfe230a7",
+        "cli.py": "2f44623087f261999afc2c2e98702a2af42b93f3b6c07a40a90e97516d929c27",
+        "config_cli.py": "8a0e2a690ea8496554310cd393951f4bdd129390359932fa9aae9d42429836ea",
+        "controller.py": "aac7d3e5099e584508522ba3b0088f4466886af292f585b58802db78cbbe36f5",
+        "controller_team.py": "499957f4b5b987a61e9ff260ecfd4af6f0c1a9d79ce5cdd0aa31902ca6e28969",
+        "diagnose_free.py": "685a55cc3fd422131030cda253d1761993f59a07ae07641e162b9db1dee5c99d",
+        "experiment_e2.py": "5760de4f35b885a991f247916b9d03102ce69e9f1f295a0d3d82b605e2ab1f64",
+        "experiment_runner.py": "01493be85c350e2f0bb55508fdc0b060feeb42b163dc3d911c06e0a7994e0afa",
+        "fields.py": "a274bb6c54417cc2c50abeeae966d574a0fbdb8a8633e207d577f4e45fef6f22",
+        "formation.py": "92c5e1a34c3ae2add7d84f452e0e8aaeb695168f356915f178bf9bc887c38e8a",
+        "formation_metrics.py": "c9397e22a816472c39026c783244b4f119cd6e685b496d7760d97c6d9aaa28f2",
+        "geometry.py": "172cf5644855aff83e5aad66fcf2269c70ce3e15841f6d214ac393bff375ce98",
+        "metrics.py": "d974347d868361b6df136caf52040eba617aba6aa05cc43acea0ed3d25def8d3",
+        "models.py": "fdd8baaf132b0186ecf793115f9318086cd33005f88e694ca17d3e22cc5bf6d6",
+        "multi_apf.py": "a86ab03ad1aa32c7b30b5f2968cb581d8a1eee72ad1004e885bc2d87fe0c7aa8",
+        "physics.py": "6f001f64cceb9bd98d06074731d15941eea472e0b3e07ea3b063779ddce742a1",
+        "planner.py": "16725b8e05453feb4f09d70c86ee4f129d381a41b33687ec88a7be35d23971e3",
+        "report_cli.py": "aa1b762f033db5331d233298b2870e873d052800cd7832b999e57b88d54536af",
+        "scenario_cli.py": "8d0d60d40b90f9a84b1133f626651f675f13971baf81b3b6f8e8cdddf86cf62e",
+        "scenarios.py": "5b951973c42765e49bb7f43047b5cf8f5c5a95f3e15315ef6e49b294c2b24dce",
+        "scenarios_e2.py": "46a244272b15ba3647c6cb1dd97f0729fabe2fe7652e82b6f68ea389270f6797",
+        "sensing.py": "012a2da297f7bb40c7822991d3b09f8a39f3f7abf2bd5abc553a85ca359b72eb",
+        "sensitivity_cli.py": "add6456569f25fed59dc209d85067596b08cafb8e17a848640362b2d51d8e7a1",
+        "swarm.py": "b65714327f740af5cd7cc287ad3ab88d7702d96939a9922ad1cc6dd1850eb8a2",
+        "swarm_cli.py": "bb261577148c3aeedd777b67b36c699dd0814e16864681d882f92ed9368d5b05",
+        "swarm_controller.py": "28be733b382d5192e37d8ed9742c2813316f89c9fdb08e880d0f74778c073ade",
+        "swarm_visualization.py": "a158740dcd56155759dacd37c8d8b378e0c492a7ccecbaa0b09f2ecbb21c6254",
+        "visualization.py": "56d2275ef389f05192f819f1812ba2e1f150ee6f3b5124a314ca2afbd30f4c6d",
+        "vortex_c.py": "34fc3cc8dd550802497f48a39486b93643e58bb086a0ec46675a4557e56b084e"
+      },
+      "fingerprint": "bf6a6b12a32861c7f58f45233801803314afd23a99006276a9df9f03329e1541",
+      "git_commit": "229bac2e9bff4f3de550b99d9ca62de6abf079de"
+    },
+    "settings": {
+      "resume": false,
+      "config_json": "configs/preflight_e2.json",
+      "out": "results/preflight_180",
+      "scenarios": [
+        "free",
+        "single_obstacle",
+        "obstacle_cluster",
+        "narrow_corridor",
+        "u_trap",
+        "room_exit"
+      ],
+      "robots": [
+        5,
+        10,
+        20
+      ],
+      "seeds": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "algorithms": [
+        "A",
+        "B",
+        "C",
+        "D"
+      ],
+      "max_steps": 1600,
+      "robot_radius": 0.2,
+      "preflight_only": true,
+      "stress_only": false,
+      "allow_contract_proxies": false
+    },
+    "checkpoint_schema": 1,
+    "run_status": "PREFLIGHT_COMPLETE",
+    "completed_cases": 180,
+    "completed_runs": 0
+  },
+  "cases": 180,
+  "certified": 180,
+  "scope": "individual disk routes; not simultaneous swarm safety"
+}

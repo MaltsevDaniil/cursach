@@ -1,13 +1,16 @@
 """E2 preflight and benchmark, kept separate from historical E1."""
 import argparse
+import json
 from pathlib import Path
 from . import experiment_runner as runner
 from .scenarios_e2 import SCENARIOS, VERSION, make_case, cohort
 from .models import SwarmConfig
+from .checkpoints import atomic_json, check_manifest, run_or_load
 
 
 def main(argv=None):
     parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument("--resume", action=argparse.BooleanOptionalAction, default=False)
     parser.add_argument("--config-json", type=Path)
     parser.add_argument("--out", type=Path, required=True)
     parser.add_argument("--scenarios", nargs="+", choices=SCENARIOS, default=list(SCENARIOS[:6]))
@@ -21,8 +24,10 @@ def main(argv=None):
     parser.add_argument("--allow-contract-proxies", action=argparse.BooleanOptionalAction, default=False)
     from .config_cli import parse_with_config
     args = parse_with_config(parser, argv)
-    if args.out.exists():
+    if args.out.exists() and not args.resume:
         raise FileExistsError(args.out)
+    if args.resume and not args.out.is_dir():
+        raise FileNotFoundError(args.out)
     if args.max_steps < 0 or any(s < 0 for s in args.seeds):
         parser.error("nonnegative steps and seeds required")
     for levels in (args.scenarios,args.robots,args.seeds,args.algorithms):
@@ -36,10 +41,15 @@ def main(argv=None):
     cfg = SwarmConfig(max_speed=.8, robot_radius=args.robot_radius)
     cases = [make_case(s,n,seed,cfg) for s in args.scenarios for n in args.robots for seed in args.seeds]
     code = runner.code_fingerprint()
-    args.out.mkdir(parents=True)
     settings = {k:str(v) if isinstance(v,Path) else v for k,v in vars(args).items()}
-    manifest = dict(version=VERSION, code=code, settings=settings, run_status="IN_PROGRESS")
-    runner.json_dump(args.out/"manifest.json", manifest)
+    if args.resume:
+        manifest = json.loads((args.out/"manifest.json").read_text(encoding="utf8"))
+        check_manifest(manifest,settings,code,VERSION)
+    else:
+        args.out.mkdir(parents=True)
+        manifest = dict(version=VERSION,code=code,settings=settings,checkpoint_schema=1)
+    manifest["run_status"] = "IN_PROGRESS"
+    atomic_json(args.out/"manifest.json",manifest)
     for case in cases:
         runner.json_dump(args.out/f"scenes/{case.scenario}/N{case.n}/seed_{case.seed:04d}.json",
                          dict(scene_hash=case.scene_hash, **case.scene_dict))
@@ -48,7 +58,8 @@ def main(argv=None):
     if not args.preflight_only:
         for case in cases:
             for method in args.algorithms:
-                row = runner.run_case(method,case,cfg,max_steps=args.max_steps,
+                row = run_or_load(method,case,cfg,max_steps=args.max_steps,
+                    resume=args.resume,
                     allow_proxies=args.allow_contract_proxies,
                     target=args.out/f"runs/{method}/{case.scenario}/N{case.n}/seed_{case.seed:04d}",code=code)
                 row["cohort"] = cohort(case.scenario)
@@ -64,7 +75,7 @@ def main(argv=None):
         raise RuntimeError("source changed during run")
     manifest.update(run_status="PREFLIGHT_COMPLETE" if args.preflight_only else "COMPLETE",
                     completed_cases=len(cases), completed_runs=len(rows))
-    runner.json_dump(args.out/"manifest.json", manifest)
+    atomic_json(args.out/"manifest.json", manifest)
     return 0
 
 
