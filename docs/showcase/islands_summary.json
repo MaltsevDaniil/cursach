@@ -1,0 +1,620 @@
+{
+  "stage": "E1",
+  "status": "SUCCESS",
+  "success": true,
+  "controller": {
+    "class": "ControllerTeam",
+    "metadata": {
+      "method": "C",
+      "layout": {
+        "robot_ids": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15,
+          16,
+          17,
+          18,
+          19
+        ],
+        "kind": "V",
+        "spacing": 1.5
+      },
+      "plan": {
+        "start_anchor": [
+          -8.0,
+          0.0
+        ],
+        "group_goal": [
+          16.0,
+          0.0
+        ],
+        "cruise_speed": 0.45,
+        "heading": [
+          1.0,
+          0.0
+        ]
+      },
+      "slot_implementation": "B-FORMATION-RECONSTRUCTED-1.0.0",
+      "controllers": {
+        "0": {
+          "stage": "C",
+          "version": "C-FORMATION-VORTEX-1.0.0",
+          "parameters": {
+            "w_formation": 1.0,
+            "k_obstacle": 0.12,
+            "k_robot": 0.18,
+            "d0_obstacle": 1.4,
+            "d0_robot": 0.9,
+            "interaction_radius": 2.5,
+            "softening": 0.1,
+            "max_repulsion": 12.0,
+            "force_epsilon": 1e-10,
+            "k_circ": 0.5,
+            "circulation_sign": 1
+          },
+          "circulation_policy": "fixed-ccw",
+          "uses_shared_reference": true,
+          "slot_source": "B.slot_position"
+        },
+        "1": {
+          "stage": "C",
+          "version": "C-FORMATION-VORTEX-1.0.0",
+          "parameters": {
+            "w_formation": 1.0,
+            "k_obstacle": 0.12,
+            "k_robot": 0.18,
+            "d0_obstacle": 1.4,
+            "d0_robot": 0.9,
+            "interaction_radius": 2.5,
+            "softening": 0.1,
+            "max_repulsion": 12.0,
+            "force_epsilon": 1e-10,
+            "k_circ": 0.5,
+            "circulation_sign": 1
+          },
+          "circulation_policy": "fixed-ccw",
+          "uses_shared_reference": true,
+          "slot_source": "B.slot_position"
+        },
+        "2": {
+          "stage": "C",
+          "version": "C-FORMATION-VORTEX-1.0.0",
+          "parameters": {
+            "w_formation": 1.0,
+            "k_obstacle": 0.12,
+            "k_robot": 0.18,
+            "d0_obstacle": 1.4,
+            "d0_robot": 0.9,
+            "interaction_radius": 2.5,
+            "softening": 0.1,
+            "max_repulsion": 12.0,
+            "force_epsilon": 1e-10,
+            "k_circ": 0.5,
+            "circulation_sign": 1
+          },
+          "circulation_policy": "fixed-ccw",
+          "uses_shared_reference": true,
+          "slot_source": "B.slot_position"
+        },
+        "3": {
+          "stage": "C",
+          "version": "C-FORMATION-VORTEX-1.0.0",
+          "parameters": {
+            "w_formation": 1.0,
+            "k_obstacle": 0.12,
+            "k_robot": 0.18,
+            "d0_obstacle": 1.4,
+            "d0_robot": 0.9,
+            "interaction_radius": 2.5,
+            "softening": 0.1,
+            "max_repulsion": 12.0,
+            "force_epsilon": 1e-10,
+            "k_circ": 0.5,
+            "circulation_sign": 1
+          },
+          "circulation_policy": "fixed-ccw",
+          "uses_shared_reference": true,
+          "slot_source": "B.slot_position"
+        },
+        "4": {
+          "stage": "C",
+          "version": "C-FORMATION-VORTEX-1.0.0",
+          "parameters": {
+            "w_formation": 1.0,
+            "k_obstacle": 0.12,
+            "k_robot": 0.18,
+            "d0_obstacle": 1.4,
+            "d0_robot": 0.9,
+            "interaction_radius": 2.5,
+            "softening": 0.1,
+            "max_repulsion": 12.0,
+            "force_epsilon": 1e-10,
+            "k_circ": 0.5,
+            "circulation_sign": 1
+          },
+          "circulation_policy": "fixed-ccw",
+          "uses_shared_reference": true,
+          "slot_source": "B.slot_position"
+        },
+        "5": {
+          "stage": "C",
+          "version": "C-FORMATION-VORTEX-1.0.0",
+          "parameters": {
+            "w_formation": 1.0,
+            "k_obstacle": 0.12,
+            "k_robot": 0.18,
+            "d0_obstacle": 1.4,
+            "d0_robot": 0.9,
+            "interaction_radius": 2.5,
+            "softening": 0.1,
+            "max_repulsion": 12.0,
+            "force_epsilon": 1e-10,
+            "k_circ": 0.5,
+            "circulation_sign": 1
+          },
+          "circulation_policy": "fixed-ccw",
+          "uses_shared_reference": true,
+          "slot_source": "B.slot_position"
+        },
+        "6": {
+          "stage": "C",
+          "version": "C-FORMATION-VORTEX-1.0.0",
+          "parameters": {
+            "w_formation": 1.0,
+            "k_obstacle": 0.12,
+            "k_robot": 0.18,
+            "d0_obstacle": 1.4,
+            "d0_robot": 0.9,
+            "interaction_radius": 2.5,
+            "softening": 0.1,
+            "max_repulsion": 12.0,
+            "force_epsilon": 1e-10,
+            "k_circ": 0.5,
+            "circulation_sign": 1
+          },
+          "circulation_policy": "fixed-ccw",
+          "uses_shared_reference": true,
+          "slot_source": "B.slot_position"
+        },
+        "7": {
+          "stage": "C",
+          "version": "C-FORMATION-VORTEX-1.0.0",
+          "parameters": {
+            "w_formation": 1.0,
+            "k_obstacle": 0.12,
+            "k_robot": 0.18,
+            "d0_obstacle": 1.4,
+            "d0_robot": 0.9,
+            "interaction_radius": 2.5,
+            "softening": 0.1,
+            "max_repulsion": 12.0,
+            "force_epsilon": 1e-10,
+            "k_circ": 0.5,
+            "circulation_sign": 1
+          },
+          "circulation_policy": "fixed-ccw",
+          "uses_shared_reference": true,
+          "slot_source": "B.slot_position"
+        },
+        "8": {
+          "stage": "C",
+          "version": "C-FORMATION-VORTEX-1.0.0",
+          "parameters": {
+            "w_formation": 1.0,
+            "k_obstacle": 0.12,
+            "k_robot": 0.18,
+            "d0_obstacle": 1.4,
+            "d0_robot": 0.9,
+            "interaction_radius": 2.5,
+            "softening": 0.1,
+            "max_repulsion": 12.0,
+            "force_epsilon": 1e-10,
+            "k_circ": 0.5,
+            "circulation_sign": 1
+          },
+          "circulation_policy": "fixed-ccw",
+          "uses_shared_reference": true,
+          "slot_source": "B.slot_position"
+        },
+        "9": {
+          "stage": "C",
+          "version": "C-FORMATION-VORTEX-1.0.0",
+          "parameters": {
+            "w_formation": 1.0,
+            "k_obstacle": 0.12,
+            "k_robot": 0.18,
+            "d0_obstacle": 1.4,
+            "d0_robot": 0.9,
+            "interaction_radius": 2.5,
+            "softening": 0.1,
+            "max_repulsion": 12.0,
+            "force_epsilon": 1e-10,
+            "k_circ": 0.5,
+            "circulation_sign": 1
+          },
+          "circulation_policy": "fixed-ccw",
+          "uses_shared_reference": true,
+          "slot_source": "B.slot_position"
+        },
+        "10": {
+          "stage": "C",
+          "version": "C-FORMATION-VORTEX-1.0.0",
+          "parameters": {
+            "w_formation": 1.0,
+            "k_obstacle": 0.12,
+            "k_robot": 0.18,
+            "d0_obstacle": 1.4,
+            "d0_robot": 0.9,
+            "interaction_radius": 2.5,
+            "softening": 0.1,
+            "max_repulsion": 12.0,
+            "force_epsilon": 1e-10,
+            "k_circ": 0.5,
+            "circulation_sign": 1
+          },
+          "circulation_policy": "fixed-ccw",
+          "uses_shared_reference": true,
+          "slot_source": "B.slot_position"
+        },
+        "11": {
+          "stage": "C",
+          "version": "C-FORMATION-VORTEX-1.0.0",
+          "parameters": {
+            "w_formation": 1.0,
+            "k_obstacle": 0.12,
+            "k_robot": 0.18,
+            "d0_obstacle": 1.4,
+            "d0_robot": 0.9,
+            "interaction_radius": 2.5,
+            "softening": 0.1,
+            "max_repulsion": 12.0,
+            "force_epsilon": 1e-10,
+            "k_circ": 0.5,
+            "circulation_sign": 1
+          },
+          "circulation_policy": "fixed-ccw",
+          "uses_shared_reference": true,
+          "slot_source": "B.slot_position"
+        },
+        "12": {
+          "stage": "C",
+          "version": "C-FORMATION-VORTEX-1.0.0",
+          "parameters": {
+            "w_formation": 1.0,
+            "k_obstacle": 0.12,
+            "k_robot": 0.18,
+            "d0_obstacle": 1.4,
+            "d0_robot": 0.9,
+            "interaction_radius": 2.5,
+            "softening": 0.1,
+            "max_repulsion": 12.0,
+            "force_epsilon": 1e-10,
+            "k_circ": 0.5,
+            "circulation_sign": 1
+          },
+          "circulation_policy": "fixed-ccw",
+          "uses_shared_reference": true,
+          "slot_source": "B.slot_position"
+        },
+        "13": {
+          "stage": "C",
+          "version": "C-FORMATION-VORTEX-1.0.0",
+          "parameters": {
+            "w_formation": 1.0,
+            "k_obstacle": 0.12,
+            "k_robot": 0.18,
+            "d0_obstacle": 1.4,
+            "d0_robot": 0.9,
+            "interaction_radius": 2.5,
+            "softening": 0.1,
+            "max_repulsion": 12.0,
+            "force_epsilon": 1e-10,
+            "k_circ": 0.5,
+            "circulation_sign": 1
+          },
+          "circulation_policy": "fixed-ccw",
+          "uses_shared_reference": true,
+          "slot_source": "B.slot_position"
+        },
+        "14": {
+          "stage": "C",
+          "version": "C-FORMATION-VORTEX-1.0.0",
+          "parameters": {
+            "w_formation": 1.0,
+            "k_obstacle": 0.12,
+            "k_robot": 0.18,
+            "d0_obstacle": 1.4,
+            "d0_robot": 0.9,
+            "interaction_radius": 2.5,
+            "softening": 0.1,
+            "max_repulsion": 12.0,
+            "force_epsilon": 1e-10,
+            "k_circ": 0.5,
+            "circulation_sign": 1
+          },
+          "circulation_policy": "fixed-ccw",
+          "uses_shared_reference": true,
+          "slot_source": "B.slot_position"
+        },
+        "15": {
+          "stage": "C",
+          "version": "C-FORMATION-VORTEX-1.0.0",
+          "parameters": {
+            "w_formation": 1.0,
+            "k_obstacle": 0.12,
+            "k_robot": 0.18,
+            "d0_obstacle": 1.4,
+            "d0_robot": 0.9,
+            "interaction_radius": 2.5,
+            "softening": 0.1,
+            "max_repulsion": 12.0,
+            "force_epsilon": 1e-10,
+            "k_circ": 0.5,
+            "circulation_sign": 1
+          },
+          "circulation_policy": "fixed-ccw",
+          "uses_shared_reference": true,
+          "slot_source": "B.slot_position"
+        },
+        "16": {
+          "stage": "C",
+          "version": "C-FORMATION-VORTEX-1.0.0",
+          "parameters": {
+            "w_formation": 1.0,
+            "k_obstacle": 0.12,
+            "k_robot": 0.18,
+            "d0_obstacle": 1.4,
+            "d0_robot": 0.9,
+            "interaction_radius": 2.5,
+            "softening": 0.1,
+            "max_repulsion": 12.0,
+            "force_epsilon": 1e-10,
+            "k_circ": 0.5,
+            "circulation_sign": 1
+          },
+          "circulation_policy": "fixed-ccw",
+          "uses_shared_reference": true,
+          "slot_source": "B.slot_position"
+        },
+        "17": {
+          "stage": "C",
+          "version": "C-FORMATION-VORTEX-1.0.0",
+          "parameters": {
+            "w_formation": 1.0,
+            "k_obstacle": 0.12,
+            "k_robot": 0.18,
+            "d0_obstacle": 1.4,
+            "d0_robot": 0.9,
+            "interaction_radius": 2.5,
+            "softening": 0.1,
+            "max_repulsion": 12.0,
+            "force_epsilon": 1e-10,
+            "k_circ": 0.5,
+            "circulation_sign": 1
+          },
+          "circulation_policy": "fixed-ccw",
+          "uses_shared_reference": true,
+          "slot_source": "B.slot_position"
+        },
+        "18": {
+          "stage": "C",
+          "version": "C-FORMATION-VORTEX-1.0.0",
+          "parameters": {
+            "w_formation": 1.0,
+            "k_obstacle": 0.12,
+            "k_robot": 0.18,
+            "d0_obstacle": 1.4,
+            "d0_robot": 0.9,
+            "interaction_radius": 2.5,
+            "softening": 0.1,
+            "max_repulsion": 12.0,
+            "force_epsilon": 1e-10,
+            "k_circ": 0.5,
+            "circulation_sign": 1
+          },
+          "circulation_policy": "fixed-ccw",
+          "uses_shared_reference": true,
+          "slot_source": "B.slot_position"
+        },
+        "19": {
+          "stage": "C",
+          "version": "C-FORMATION-VORTEX-1.0.0",
+          "parameters": {
+            "w_formation": 1.0,
+            "k_obstacle": 0.12,
+            "k_robot": 0.18,
+            "d0_obstacle": 1.4,
+            "d0_robot": 0.9,
+            "interaction_radius": 2.5,
+            "softening": 0.1,
+            "max_repulsion": 12.0,
+            "force_epsilon": 1e-10,
+            "k_circ": 0.5,
+            "circulation_sign": 1
+          },
+          "circulation_policy": "fixed-ccw",
+          "uses_shared_reference": true,
+          "slot_source": "B.slot_position"
+        }
+      }
+    }
+  },
+  "config": {
+    "dt": 0.05,
+    "robot_radius": 0.2,
+    "max_speed": 0.8,
+    "neighbor_radius": 2.5,
+    "obstacle_sensor_radius": 3.0,
+    "goal_tolerance": 0.25,
+    "epsilon_geom": 1e-09
+  },
+  "robot_ids": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12,
+    13,
+    14,
+    15,
+    16,
+    17,
+    18,
+    19
+  ],
+  "goals": [
+    [
+      16.0,
+      0.0
+    ],
+    [
+      14.5,
+      1.5
+    ],
+    [
+      14.5,
+      -1.5
+    ],
+    [
+      13.0,
+      3.0
+    ],
+    [
+      13.0,
+      -3.0
+    ],
+    [
+      11.5,
+      4.5
+    ],
+    [
+      11.5,
+      -4.5
+    ],
+    [
+      10.0,
+      6.0
+    ],
+    [
+      10.0,
+      -6.0
+    ],
+    [
+      8.5,
+      7.5
+    ],
+    [
+      8.5,
+      -7.5
+    ],
+    [
+      7.0,
+      9.0
+    ],
+    [
+      7.0,
+      -9.0
+    ],
+    [
+      5.5,
+      10.5
+    ],
+    [
+      5.5,
+      -10.5
+    ],
+    [
+      4.0,
+      12.0
+    ],
+    [
+      4.0,
+      -12.0
+    ],
+    [
+      2.5,
+      13.5
+    ],
+    [
+      2.5,
+      -13.5
+    ],
+    [
+      1.0,
+      15.0
+    ]
+  ],
+  "obstacles": [
+    {
+      "center": [
+        0.0,
+        0.0
+      ],
+      "radius": 1.2
+    },
+    {
+      "center": [
+        7.0,
+        3.0
+      ],
+      "radius": 1.0
+    },
+    {
+      "center": [
+        8.0,
+        -4.0
+      ],
+      "radius": 1.2
+    }
+  ],
+  "accepted_steps": 1057,
+  "attempted_steps": 1057,
+  "last_accepted_time": 52.849999999999135,
+  "path_lengths": [
+    25.948082644635473,
+    25.052394004785477,
+    25.960062367930107,
+    25.83507584881768,
+    25.22299809590545,
+    24.285983334910647,
+    25.84253364148318,
+    23.792214208074174,
+    23.907656473724185,
+    23.937062841863696,
+    23.99449319706785,
+    23.92606544154142,
+    24.03868743534517,
+    23.93529568458033,
+    23.793320005434193,
+    23.865978840268692,
+    24.088202696197026,
+    23.869333275977038,
+    23.990992971221583,
+    23.888243569165677
+  ],
+  "min_robot_clearance": 0.5984703085984802,
+  "min_obstacle_clearance": 0.367259215086519,
+  "events": [],
+  "rejected_step": null
+}
