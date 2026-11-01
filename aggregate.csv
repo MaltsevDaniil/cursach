@@ -1,0 +1,9 @@
+method,scenario,n,runs_total,runs_valid,runs_invalid,successes,success_rate,timeouts,collision_runs,mean_completion_time_success_only_s,mean_group_path_all_terminal_outcomes
+A,free,5,1,1,0,1,1.0,0,0,9.750000000000004,38.99999999999999
+A,single_obstacle,5,1,1,0,1,1.0,0,0,11.850000000000033,41.50376295738431
+B,free,5,1,1,0,1,1.0,0,0,15.550000000000086,38.81216945852028
+B,single_obstacle,5,1,1,0,0,0.0,1,0,,45.72363638891279
+C,free,5,1,1,0,1,1.0,0,0,15.550000000000086,38.81216945852028
+C,single_obstacle,5,1,1,0,1,1.0,0,0,15.550000000000086,41.9961139759058
+D,free,5,1,1,0,1,1.0,0,0,15.550000000000086,38.81216945852028
+D,single_obstacle,5,1,1,0,1,1.0,0,0,15.550000000000086,42.338880768953786
