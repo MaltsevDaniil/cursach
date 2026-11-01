@@ -3,6 +3,8 @@ import argparse
 from pathlib import Path
 import numpy as np
 from .boids import BoidsController
+from .multi_apf import APFController
+from .formation import FormationLayout, FormationPlan, FormationTeam, slot_position
 from .geometry import Obstacle
 from .models import SwarmConfig
 from .swarm import SwarmSimulator
@@ -13,8 +15,9 @@ from .swarm_visualization import save_swarm_figure
 def main(argv=None):
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--robots", type=int, choices=range(5, 21), default=5)
-    parser.add_argument("--controller", choices=["goal", "boids"], default="goal")
+    parser.add_argument("--controller", choices=["goal", "boids", "A", "B"], default="goal")
     parser.add_argument("--scenario", choices=["free", "obstacle"], default="free")
+    parser.add_argument("--formation", choices=["line", "V"], default="line")
     parser.add_argument("--max-steps", type=int, default=600)
     parser.add_argument("--out", type=Path, default=Path("results/swarm"))
     parser.add_argument("--no-plot", action="store_true")
@@ -25,6 +28,14 @@ def main(argv=None):
     goals = positions + [6, 0]
     obstacles = (Obstacle((3, 0), .6),) if args.scenario == "obstacle" else ()
     controller = BoidsController() if args.controller == "boids" else GoalController()
+    if args.controller == "A":
+        controller = APFController()
+    elif args.controller == "B":
+        layout = FormationLayout(tuple(range(args.robots)), args.formation, 1.5)
+        plan = FormationPlan((0, 0), (6, 0))
+        positions = np.array([slot_position(layout, plan.at(0), i) for i in layout.robot_ids])
+        goals = np.array([slot_position(layout, plan.at(plan.arrival_time), i) for i in layout.robot_ids])
+        controller = FormationTeam(layout, plan)
     sim = SwarmSimulator(SwarmConfig(), controller)
     sim.reset(positions, goals, obstacles)
     result = sim.run(args.max_steps)
