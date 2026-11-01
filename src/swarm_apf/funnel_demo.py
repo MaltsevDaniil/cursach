@@ -50,7 +50,7 @@ def main(argv=None):
     p=argparse.ArgumentParser(description=__doc__)
     p.add_argument("--out",type=Path,required=True)
     p.add_argument("--robots",type=int,choices=[5,10],default=5)
-    p.add_argument("--controller",choices=["C","D"],default="D")
+    p.add_argument("--controller",choices=["C","D","E"],default="D")
     p.add_argument("--steps",type=int,default=1800)
     p.add_argument("--no-animation",action="store_true")
     args=p.parse_args(argv)
@@ -59,7 +59,10 @@ def main(argv=None):
     if args.steps<0:
         p.error("steps must be nonnegative")
     layout,plan,start,goals,obstacles=scene(args.robots)
-    sim=SwarmSimulator(SwarmConfig(dt=.05,max_speed=.6),ControllerTeam(args.controller,layout,plan))
+    from .reactive_queue import ReactiveQueueTeam
+    team=(ReactiveQueueTeam(layout.robot_ids,plan.group_goal) if args.controller=="E"
+          else ControllerTeam(args.controller,layout,plan))
+    sim=SwarmSimulator(SwarmConfig(dt=.05,max_speed=.6),team)
     sim.reset(start,goals,obstacles)
     result=sim.run(args.steps)
     sim.save_history(args.out)

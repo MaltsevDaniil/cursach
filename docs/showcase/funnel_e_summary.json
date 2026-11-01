@@ -1,0 +1,703 @@
+{
+  "stage": "E1",
+  "status": "SUCCESS",
+  "success": true,
+  "controller": {
+    "class": "ReactiveQueueTeam",
+    "metadata": {
+      "0": {
+        "version": "E-LOCAL-QUEUE-EXPERIMENT-1",
+        "group_goal": [
+          12.0,
+          0.0
+        ],
+        "heading": [
+          1.0,
+          0.0
+        ],
+        "policy": "local wall/neighbor velocity constraints; shared goal axis",
+        "limitations": "heuristic projection, not certified collision avoidance"
+      },
+      "1": {
+        "version": "E-LOCAL-QUEUE-EXPERIMENT-1",
+        "group_goal": [
+          12.0,
+          0.0
+        ],
+        "heading": [
+          1.0,
+          0.0
+        ],
+        "policy": "local wall/neighbor velocity constraints; shared goal axis",
+        "limitations": "heuristic projection, not certified collision avoidance"
+      },
+      "2": {
+        "version": "E-LOCAL-QUEUE-EXPERIMENT-1",
+        "group_goal": [
+          12.0,
+          0.0
+        ],
+        "heading": [
+          1.0,
+          0.0
+        ],
+        "policy": "local wall/neighbor velocity constraints; shared goal axis",
+        "limitations": "heuristic projection, not certified collision avoidance"
+      },
+      "3": {
+        "version": "E-LOCAL-QUEUE-EXPERIMENT-1",
+        "group_goal": [
+          12.0,
+          0.0
+        ],
+        "heading": [
+          1.0,
+          0.0
+        ],
+        "policy": "local wall/neighbor velocity constraints; shared goal axis",
+        "limitations": "heuristic projection, not certified collision avoidance"
+      },
+      "4": {
+        "version": "E-LOCAL-QUEUE-EXPERIMENT-1",
+        "group_goal": [
+          12.0,
+          0.0
+        ],
+        "heading": [
+          1.0,
+          0.0
+        ],
+        "policy": "local wall/neighbor velocity constraints; shared goal axis",
+        "limitations": "heuristic projection, not certified collision avoidance"
+      }
+    }
+  },
+  "config": {
+    "dt": 0.05,
+    "robot_radius": 0.2,
+    "max_speed": 0.6,
+    "neighbor_radius": 2.5,
+    "obstacle_sensor_radius": 3.0,
+    "goal_tolerance": 0.25,
+    "epsilon_geom": 1e-09
+  },
+  "robot_ids": [
+    0,
+    1,
+    2,
+    3,
+    4
+  ],
+  "goals": [
+    [
+      12.0,
+      -2.8
+    ],
+    [
+      12.0,
+      -1.4
+    ],
+    [
+      12.0,
+      0.0
+    ],
+    [
+      12.0,
+      1.4
+    ],
+    [
+      12.0,
+      2.8
+    ]
+  ],
+  "obstacles": [
+    {
+      "center": [
+        -7.0,
+        -5.2
+      ],
+      "radius": 0.3
+    },
+    {
+      "center": [
+        -6.75,
+        -5.0375000000000005
+      ],
+      "radius": 0.3
+    },
+    {
+      "center": [
+        -6.5,
+        -4.875000000000001
+      ],
+      "radius": 0.3
+    },
+    {
+      "center": [
+        -6.25,
+        -4.7125
+      ],
+      "radius": 0.3
+    },
+    {
+      "center": [
+        -6.0,
+        -4.550000000000001
+      ],
+      "radius": 0.3
+    },
+    {
+      "center": [
+        -5.75,
+        -4.3875
+      ],
+      "radius": 0.3
+    },
+    {
+      "center": [
+        -5.5,
+        -4.2250000000000005
+      ],
+      "radius": 0.3
+    },
+    {
+      "center": [
+        -5.25,
+        -4.0625
+      ],
+      "radius": 0.3
+    },
+    {
+      "center": [
+        -5.0,
+        -3.9
+      ],
+      "radius": 0.3
+    },
+    {
+      "center": [
+        -4.75,
+        -3.7375
+      ],
+      "radius": 0.3
+    },
+    {
+      "center": [
+        -4.5,
+        -3.575
+      ],
+      "radius": 0.3
+    },
+    {
+      "center": [
+        -4.25,
+        -3.4125
+      ],
+      "radius": 0.3
+    },
+    {
+      "center": [
+        -4.0,
+        -3.25
+      ],
+      "radius": 0.3
+    },
+    {
+      "center": [
+        -3.75,
+        -3.0875
+      ],
+      "radius": 0.3
+    },
+    {
+      "center": [
+        -3.5,
+        -2.925
+      ],
+      "radius": 0.3
+    },
+    {
+      "center": [
+        -3.25,
+        -2.7625
+      ],
+      "radius": 0.3
+    },
+    {
+      "center": [
+        -3.0,
+        -2.6
+      ],
+      "radius": 0.3
+    },
+    {
+      "center": [
+        -2.75,
+        -2.4375
+      ],
+      "radius": 0.3
+    },
+    {
+      "center": [
+        -2.5,
+        -2.275
+      ],
+      "radius": 0.3
+    },
+    {
+      "center": [
+        -2.25,
+        -2.1125000000000003
+      ],
+      "radius": 0.3
+    },
+    {
+      "center": [
+        -2.0,
+        -1.9500000000000002
+      ],
+      "radius": 0.3
+    },
+    {
+      "center": [
+        -1.75,
+        -1.7875
+      ],
+      "radius": 0.3
+    },
+    {
+      "center": [
+        -1.5,
+        -1.625
+      ],
+      "radius": 0.3
+    },
+    {
+      "center": [
+        -1.25,
+        -1.4625
+      ],
+      "radius": 0.3
+    },
+    {
+      "center": [
+        -1.0,
+        -1.3
+      ],
+      "radius": 0.3
+    },
+    {
+      "center": [
+        -0.75,
+        -1.1375000000000002
+      ],
+      "radius": 0.3
+    },
+    {
+      "center": [
+        -0.5,
+        -0.9750000000000001
+      ],
+      "radius": 0.3
+    },
+    {
+      "center": [
+        -0.25,
+        -0.8125
+      ],
+      "radius": 0.3
+    },
+    {
+      "center": [
+        0.0,
+        -0.65
+      ],
+      "radius": 0.3
+    },
+    {
+      "center": [
+        0.25,
+        -0.65
+      ],
+      "radius": 0.3
+    },
+    {
+      "center": [
+        0.5,
+        -0.65
+      ],
+      "radius": 0.3
+    },
+    {
+      "center": [
+        0.75,
+        -0.65
+      ],
+      "radius": 0.3
+    },
+    {
+      "center": [
+        1.0,
+        -0.65
+      ],
+      "radius": 0.3
+    },
+    {
+      "center": [
+        1.25,
+        -0.65
+      ],
+      "radius": 0.3
+    },
+    {
+      "center": [
+        1.5,
+        -0.65
+      ],
+      "radius": 0.3
+    },
+    {
+      "center": [
+        1.75,
+        -0.65
+      ],
+      "radius": 0.3
+    },
+    {
+      "center": [
+        2.0,
+        -0.65
+      ],
+      "radius": 0.3
+    },
+    {
+      "center": [
+        2.25,
+        -0.65
+      ],
+      "radius": 0.3
+    },
+    {
+      "center": [
+        2.5,
+        -0.65
+      ],
+      "radius": 0.3
+    },
+    {
+      "center": [
+        2.75,
+        -0.65
+      ],
+      "radius": 0.3
+    },
+    {
+      "center": [
+        3.0,
+        -0.65
+      ],
+      "radius": 0.3
+    },
+    {
+      "center": [
+        -7.0,
+        5.2
+      ],
+      "radius": 0.3
+    },
+    {
+      "center": [
+        -6.75,
+        5.0375000000000005
+      ],
+      "radius": 0.3
+    },
+    {
+      "center": [
+        -6.5,
+        4.875000000000001
+      ],
+      "radius": 0.3
+    },
+    {
+      "center": [
+        -6.25,
+        4.7125
+      ],
+      "radius": 0.3
+    },
+    {
+      "center": [
+        -6.0,
+        4.550000000000001
+      ],
+      "radius": 0.3
+    },
+    {
+      "center": [
+        -5.75,
+        4.3875
+      ],
+      "radius": 0.3
+    },
+    {
+      "center": [
+        -5.5,
+        4.2250000000000005
+      ],
+      "radius": 0.3
+    },
+    {
+      "center": [
+        -5.25,
+        4.0625
+      ],
+      "radius": 0.3
+    },
+    {
+      "center": [
+        -5.0,
+        3.9
+      ],
+      "radius": 0.3
+    },
+    {
+      "center": [
+        -4.75,
+        3.7375
+      ],
+      "radius": 0.3
+    },
+    {
+      "center": [
+        -4.5,
+        3.575
+      ],
+      "radius": 0.3
+    },
+    {
+      "center": [
+        -4.25,
+        3.4125
+      ],
+      "radius": 0.3
+    },
+    {
+      "center": [
+        -4.0,
+        3.25
+      ],
+      "radius": 0.3
+    },
+    {
+      "center": [
+        -3.75,
+        3.0875
+      ],
+      "radius": 0.3
+    },
+    {
+      "center": [
+        -3.5,
+        2.925
+      ],
+      "radius": 0.3
+    },
+    {
+      "center": [
+        -3.25,
+        2.7625
+      ],
+      "radius": 0.3
+    },
+    {
+      "center": [
+        -3.0,
+        2.6
+      ],
+      "radius": 0.3
+    },
+    {
+      "center": [
+        -2.75,
+        2.4375
+      ],
+      "radius": 0.3
+    },
+    {
+      "center": [
+        -2.5,
+        2.275
+      ],
+      "radius": 0.3
+    },
+    {
+      "center": [
+        -2.25,
+        2.1125000000000003
+      ],
+      "radius": 0.3
+    },
+    {
+      "center": [
+        -2.0,
+        1.9500000000000002
+      ],
+      "radius": 0.3
+    },
+    {
+      "center": [
+        -1.75,
+        1.7875
+      ],
+      "radius": 0.3
+    },
+    {
+      "center": [
+        -1.5,
+        1.625
+      ],
+      "radius": 0.3
+    },
+    {
+      "center": [
+        -1.25,
+        1.4625
+      ],
+      "radius": 0.3
+    },
+    {
+      "center": [
+        -1.0,
+        1.3
+      ],
+      "radius": 0.3
+    },
+    {
+      "center": [
+        -0.75,
+        1.1375000000000002
+      ],
+      "radius": 0.3
+    },
+    {
+      "center": [
+        -0.5,
+        0.9750000000000001
+      ],
+      "radius": 0.3
+    },
+    {
+      "center": [
+        -0.25,
+        0.8125
+      ],
+      "radius": 0.3
+    },
+    {
+      "center": [
+        0.0,
+        0.65
+      ],
+      "radius": 0.3
+    },
+    {
+      "center": [
+        0.25,
+        0.65
+      ],
+      "radius": 0.3
+    },
+    {
+      "center": [
+        0.5,
+        0.65
+      ],
+      "radius": 0.3
+    },
+    {
+      "center": [
+        0.75,
+        0.65
+      ],
+      "radius": 0.3
+    },
+    {
+      "center": [
+        1.0,
+        0.65
+      ],
+      "radius": 0.3
+    },
+    {
+      "center": [
+        1.25,
+        0.65
+      ],
+      "radius": 0.3
+    },
+    {
+      "center": [
+        1.5,
+        0.65
+      ],
+      "radius": 0.3
+    },
+    {
+      "center": [
+        1.75,
+        0.65
+      ],
+      "radius": 0.3
+    },
+    {
+      "center": [
+        2.0,
+        0.65
+      ],
+      "radius": 0.3
+    },
+    {
+      "center": [
+        2.25,
+        0.65
+      ],
+      "radius": 0.3
+    },
+    {
+      "center": [
+        2.5,
+        0.65
+      ],
+      "radius": 0.3
+    },
+    {
+      "center": [
+        2.75,
+        0.65
+      ],
+      "radius": 0.3
+    },
+    {
+      "center": [
+        3.0,
+        0.65
+      ],
+      "radius": 0.3
+    }
+  ],
+  "accepted_steps": 972,
+  "attempted_steps": 972,
+  "last_accepted_time": 48.599999999999376,
+  "path_lengths": [
+    23.457568789602202,
+    22.4711610343194,
+    21.999984127068387,
+    22.569022008762918,
+    23.273215571410997
+  ],
+  "min_robot_clearance": 0.3091375131230929,
+  "min_obstacle_clearance": 0.042980554182624364,
+  "events": [],
+  "rejected_step": null
+}

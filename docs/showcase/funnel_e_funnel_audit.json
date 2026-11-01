@@ -1,0 +1,15 @@
+{
+  "all_crossed_throat": true,
+  "arrived": 5,
+  "note": "finite walls permit external bypass; goal success alone is not funnel success",
+  "per_robot_crossed_throat": [
+    true,
+    true,
+    true,
+    true,
+    true
+  ],
+  "robot_diameter": 0.4,
+  "status": "SUCCESS",
+  "throat_surface_width": 0.7
+}
