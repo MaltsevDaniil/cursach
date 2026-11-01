@@ -4,8 +4,8 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "swarm-apf"
-version = "0.1.0"
-description = "E0: reproducible single-agent APF + vortex baseline"
+version = "0.2.0"
+description = "E0 regression and E1 synchronous swarm simulator"
 requires-python = ">=3.11"
 dependencies = ["numpy>=1.24", "matplotlib>=3.7"]
 
@@ -14,6 +14,7 @@ dev = ["pytest>=7.4"]
 
 [project.scripts]
 swarm-apf = "swarm_apf.cli:main"
+swarm-sim = "swarm_apf.swarm_cli:main"
 
 [tool.setuptools.packages.find]
 where = ["src"]
