@@ -1,0 +1,8 @@
+{
+  "out": "results/stress_e2",
+  "scenarios": [
+    "blocked_room"
+  ],
+  "stress_only": true,
+  "allow_contract_proxies": true
+}

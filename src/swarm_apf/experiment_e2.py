@@ -8,6 +8,7 @@ from .models import SwarmConfig
 
 def main(argv=None):
     parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument("--config-json", type=Path)
     parser.add_argument("--out", type=Path, required=True)
     parser.add_argument("--scenarios", nargs="+", choices=SCENARIOS, default=list(SCENARIOS[:6]))
     parser.add_argument("--robots", nargs="+", type=int, choices=[5,10,20], default=[5,10,20])
@@ -15,10 +16,11 @@ def main(argv=None):
     parser.add_argument("--algorithms", nargs="+", choices=runner.METHODS, default=list(runner.METHODS))
     parser.add_argument("--max-steps", type=int, default=1600)
     parser.add_argument("--robot-radius", type=float, default=.2)
-    parser.add_argument("--preflight-only", action="store_true")
-    parser.add_argument("--stress-only", action="store_true")
-    parser.add_argument("--allow-contract-proxies", action="store_true")
-    args = parser.parse_args(argv)
+    parser.add_argument("--preflight-only", action=argparse.BooleanOptionalAction, default=False)
+    parser.add_argument("--stress-only", action=argparse.BooleanOptionalAction, default=False)
+    parser.add_argument("--allow-contract-proxies", action=argparse.BooleanOptionalAction, default=False)
+    from .config_cli import parse_with_config
+    args = parse_with_config(parser, argv)
     if args.out.exists():
         raise FileExistsError(args.out)
     if args.max_steps < 0 or any(s < 0 for s in args.seeds):

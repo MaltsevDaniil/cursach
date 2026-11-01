@@ -155,9 +155,34 @@ SCENE_UNCERTIFIED. Это ошибки геометрии, не неудачи �
 
 Предварительный аудит сохраняет manifest.json, preflight.json, scenes/ и
 не запускает контроллеры. Benchmark использует те же данные и физику E1.
-Все папки вывода должны быть новыми. Старые команды --config-json из
-EXPERIMENTS (1).md не поддерживаются: используйте команды выше.
-PNG-предпросмотр карт и конфигурации JSON пока не реализованы.
+Все папки вывода должны быть новыми. JSON-конфигурации и PNG-предпросмотр теперь поддерживаются:
+
+```bash
+python -m swarm_apf.experiment_e2 --config-json configs/preflight_e2.json
+python -m swarm_apf.experiment_e2 --config-json configs/quick_e2.json
+python -m swarm_apf.experiment_e2 --config-json configs/full_e2.json
+python -m swarm_apf.scenario_cli --out results/maps --robots 5 10 20 --seeds 0
+python -m swarm_apf.report_cli --input results/quick_e2 --out results/quick_report
+```
+
+quick_e2 — четыре запуска на свободной карте N=5 seed=0.
+full_e2 — 720 запусков; preflight_e2 — 180 случаев без контроллеров.
+stress_e2 — отдельная закрытая комната. A/B в конфигурациях явно разрешены
+как реконструкции. Наличие full-конфига не означает выполнения полного пакета.
+
+Ключи JSON совпадают с именами аргументов Python (например max_steps,
+preflight_only). Неизвестные ключи и неверные типы отклоняются. Явные CLI
+параметры имеют приоритет, включая --no-preflight-only, --no-stress-only,
+--no-allow-contract-proxies. Пути из JSON считаются относительно текущего
+рабочего каталога; запускайте приведённые команды из корня репозитория.
+Для повторного прогона задайте новый --out.
+
+scenario_cli сохраняет отдельные PNG, JSON геометрии и geometry_audit.csv:
+синие диски — старты, зелёные — цели, пунктир — препятствия с учётом радиуса
+робота. Это карты, не траектории. Общий contact sheet пока не создаётся.
+report_cli принимает только COMPLETE и сохраняет report.md и графики
+количества SUCCESS/TIMEOUT/COLLISION/INVALID отдельно по каждой когорте.
+Отчёт не доказывает превосходство алгоритма и не объединяет разные пакеты.
 
 ## Однороботная регрессия E0
 
@@ -195,10 +220,13 @@ python -m swarm_apf.cli --scenario all --out results/e0
 swarm_visualization и интеграционные тесты восстановлены при сборке.
 В models/sensing добавлена передача известного robot_radius для Boids.
 
-Далее: полный сравнительный прогон, графические отчёты и конфигурации JSON.
+Далее: полный сравнительный прогон и анализ чувствительности; обзорная сетка карт.
 Для исторического сравнения по-прежнему нужны исходные A/B и их lock-файлы.
 
-Проверено при сборке: 77 тестов; аудит E2 — 18 основных случаев (6 карт × 3 N), seed=0; пакет E1 free N=5 seed=0 — SUCCESS для A/B/C/D; C obstacle (5) — SUCCESS за 231 шаг,
+Проверено при сборке: 84 теста; аудит E2 — 18 основных случаев (6 карт × 3 N), seed=0; пакет E1 free N=5 seed=0 — SUCCESS для A/B/C/D; C obstacle (5) — SUCCESS за 231 шаг,
 D obstacle (5) — SUCCESS за 238 шагов; A free (5) — SUCCESS за 165 шагов;
 B free V (10) — SUCCESS за 231 шаг; E1 free (5 роботов) — SUCCESS за 165 шагов;
 Boids free (10) — SUCCESS за 167; obstacle — COLLISION_OBSTACLE на попытке 63.
+
+Проверочный quick_e2: free, N=5, seed=0, 1600 попыток — TIMEOUT у A/B/C/D.
+Это фактические исходы текущих параметров; достижимость геометрии не означает сходимость.

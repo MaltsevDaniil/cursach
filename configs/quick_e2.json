@@ -1,0 +1,13 @@
+{
+  "out": "results/quick_e2",
+  "scenarios": [
+    "free"
+  ],
+  "robots": [
+    5
+  ],
+  "seeds": [
+    0
+  ],
+  "allow_contract_proxies": true
+}
