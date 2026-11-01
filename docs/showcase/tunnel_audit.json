@@ -1,0 +1,27 @@
+{
+  "all_robots_used_same_tunnel": true,
+  "controller": "scheduled slot tracking; not C/D",
+  "final_shape_rms": 0.0335793275479227,
+  "per_robot_passage": [
+    true,
+    true,
+    true,
+    true,
+    true,
+    true,
+    true,
+    true,
+    true,
+    true
+  ],
+  "robot_diameter": 0.4,
+  "stage_ends": [
+    0.0,
+    22.999999999999996,
+    38.0,
+    105.44444444444444,
+    120.44444444444444,
+    143.44444444444443
+  ],
+  "tunnel_surface_width": 0.7
+}

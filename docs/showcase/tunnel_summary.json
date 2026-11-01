@@ -1,0 +1,351 @@
+{
+  "stage": "E1",
+  "status": "SUCCESS",
+  "success": true,
+  "controller": {
+    "class": "ScheduledController",
+    "metadata": {
+      "version": "TUNNEL-SCHEDULE-1",
+      "n": 10,
+      "speed": 0.45,
+      "stage_ends": [
+        0.0,
+        22.999999999999996,
+        38.0,
+        105.44444444444444,
+        120.44444444444444,
+        143.44444444444443
+      ],
+      "stages": [
+        "stagger",
+        "compress",
+        "cross tunnel",
+        "restore width",
+        "align formation"
+      ],
+      "scope": "pre-agreed global timetable, no autonomous passage detection"
+    }
+  },
+  "config": {
+    "dt": 0.1,
+    "robot_radius": 0.2,
+    "max_speed": 0.7,
+    "neighbor_radius": 2.5,
+    "obstacle_sensor_radius": 3.0,
+    "goal_tolerance": 0.12,
+    "epsilon_geom": 1e-09
+  },
+  "robot_ids": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9
+  ],
+  "goals": [
+    [
+      21.9,
+      -6.3
+    ],
+    [
+      21.9,
+      -4.8999999999999995
+    ],
+    [
+      21.9,
+      -3.5
+    ],
+    [
+      21.9,
+      -2.0999999999999996
+    ],
+    [
+      21.9,
+      -0.7
+    ],
+    [
+      21.9,
+      0.7
+    ],
+    [
+      21.9,
+      2.0999999999999996
+    ],
+    [
+      21.9,
+      3.5
+    ],
+    [
+      21.9,
+      4.8999999999999995
+    ],
+    [
+      21.9,
+      6.3
+    ]
+  ],
+  "obstacles": [
+    {
+      "center": [
+        0.0,
+        -0.8
+      ],
+      "radius": 0.45
+    },
+    {
+      "center": [
+        0.0,
+        0.8
+      ],
+      "radius": 0.45
+    },
+    {
+      "center": [
+        0.5,
+        -0.8
+      ],
+      "radius": 0.45
+    },
+    {
+      "center": [
+        0.5,
+        0.8
+      ],
+      "radius": 0.45
+    },
+    {
+      "center": [
+        1.0,
+        -0.8
+      ],
+      "radius": 0.45
+    },
+    {
+      "center": [
+        1.0,
+        0.8
+      ],
+      "radius": 0.45
+    },
+    {
+      "center": [
+        1.5,
+        -0.8
+      ],
+      "radius": 0.45
+    },
+    {
+      "center": [
+        1.5,
+        0.8
+      ],
+      "radius": 0.45
+    },
+    {
+      "center": [
+        2.0,
+        -0.8
+      ],
+      "radius": 0.45
+    },
+    {
+      "center": [
+        2.0,
+        0.8
+      ],
+      "radius": 0.45
+    },
+    {
+      "center": [
+        2.5,
+        -0.8
+      ],
+      "radius": 0.45
+    },
+    {
+      "center": [
+        2.5,
+        0.8
+      ],
+      "radius": 0.45
+    },
+    {
+      "center": [
+        3.0,
+        -0.8
+      ],
+      "radius": 0.45
+    },
+    {
+      "center": [
+        3.0,
+        0.8
+      ],
+      "radius": 0.45
+    },
+    {
+      "center": [
+        3.5,
+        -0.8
+      ],
+      "radius": 0.45
+    },
+    {
+      "center": [
+        3.5,
+        0.8
+      ],
+      "radius": 0.45
+    },
+    {
+      "center": [
+        4.0,
+        -0.8
+      ],
+      "radius": 0.45
+    },
+    {
+      "center": [
+        4.0,
+        0.8
+      ],
+      "radius": 0.45
+    },
+    {
+      "center": [
+        4.5,
+        -0.8
+      ],
+      "radius": 0.45
+    },
+    {
+      "center": [
+        4.5,
+        0.8
+      ],
+      "radius": 0.45
+    },
+    {
+      "center": [
+        5.0,
+        -0.8
+      ],
+      "radius": 0.45
+    },
+    {
+      "center": [
+        5.0,
+        0.8
+      ],
+      "radius": 0.45
+    },
+    {
+      "center": [
+        5.5,
+        -0.8
+      ],
+      "radius": 0.45
+    },
+    {
+      "center": [
+        5.5,
+        0.8
+      ],
+      "radius": 0.45
+    },
+    {
+      "center": [
+        6.0,
+        -0.8
+      ],
+      "radius": 0.45
+    },
+    {
+      "center": [
+        6.0,
+        0.8
+      ],
+      "radius": 0.45
+    },
+    {
+      "center": [
+        6.5,
+        -0.8
+      ],
+      "radius": 0.45
+    },
+    {
+      "center": [
+        6.5,
+        0.8
+      ],
+      "radius": 0.45
+    },
+    {
+      "center": [
+        7.0,
+        -0.8
+      ],
+      "radius": 0.45
+    },
+    {
+      "center": [
+        7.0,
+        0.8
+      ],
+      "radius": 0.45
+    },
+    {
+      "center": [
+        7.5,
+        -0.8
+      ],
+      "radius": 0.45
+    },
+    {
+      "center": [
+        7.5,
+        0.8
+      ],
+      "radius": 0.45
+    },
+    {
+      "center": [
+        8.0,
+        -0.8
+      ],
+      "radius": 0.45
+    },
+    {
+      "center": [
+        8.0,
+        0.8
+      ],
+      "radius": 0.45
+    }
+  ],
+  "accepted_steps": 1433,
+  "attempted_steps": 1433,
+  "last_accepted_time": 143.29999999999615,
+  "path_lengths": [
+    42.48750286593541,
+    41.874829404032155,
+    41.26350542827331,
+    40.65454810622707,
+    40.04894037209921,
+    42.23720999128234,
+    47.21850587898146,
+    52.201408492666744,
+    57.18537612390733,
+    62.17004185013937
+  ],
+  "min_robot_clearance": 0.6999999999999943,
+  "min_obstacle_clearance": 0.15000000000000002,
+  "events": [],
+  "rejected_step": null
+}

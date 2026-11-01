@@ -31,7 +31,7 @@ def make_scene(name, n=20, seed=7):
     return layout,plan,start,goals,obstacles
 
 
-def animate(result, layout, plan, destination, frames=140):
+def animate(result, layout, plan, destination, frames=140, slot_at=None):
     """Pillow rasterization of accepted states; no interpolated collision repairs."""
     from PIL import Image, ImageDraw
     if frames < 2:
@@ -67,7 +67,7 @@ def animate(result, layout, plan, destination, frames=140):
             if len(trail)>1:
                 draw.line([xy(p) for p in trail],fill=color,width=2)
             disk(draw,result.goals[i],result.config.robot_radius,outline=color)
-            x,y=xy(slot_position(layout,plan.at(float(result.times[k])),rid))
+            x,y=xy(slot_at(float(result.times[k]),rid) if slot_at else slot_position(layout,plan.at(float(result.times[k])),rid))
             draw.line((x-3,y,x+3,y),fill="#aeb7c5")
             draw.line((x,y-3,x,y+3),fill="#aeb7c5")
             disk(draw,result.positions[k,i],result.config.robot_radius,fill=color,outline="#ffffff")
